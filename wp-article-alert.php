@@ -19,9 +19,9 @@ require_once 'autoload.php';
  */
 class WPAA_Plugin implements WPAA_Plugin_Interface
 {
-    protected function init()
+    public function init()
     {
-
+        self::createShortcode();
     }
 
     protected static function createShortcode()
@@ -29,3 +29,5 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
         add_shortcode('alert', 'wpaa_shortcode_handler');
     }
 }
+
+WPAA_Plugin::init();
