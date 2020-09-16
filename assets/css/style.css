@@ -12,7 +12,8 @@
     font-family: 'Roboto Condensed', sans-serif;
     width: 100% !important;
     padding: 20px !important;
-    margin: 20px 0 20px 0 !important;
+    margin-left: auto;
+    margin-right: auto;
     border-width: 3px;
     border-style: dashed;
     color: #000 !important;
@@ -62,7 +63,6 @@
 
 .wpaa-alert__text {
     opacity: .75;
-    line-height: 18px;
     color: inherit !important;
     padding: 0 !important;
     margin: 10px 0 0 0 !important;

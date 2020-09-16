@@ -9,25 +9,38 @@
  */
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
-        'type'  => 'info',
-        'title' => 'Info!'
+        'type'         => 'info',
+        'title'        => 'Info!',
+        'html_classes' => '',
+        'title_size'   => 18,
+        'text_size'    => 16,
+        'max_size'     => 700,
+        'margin'       => 20
     ], $atts));
 
     ob_start();
 
     printf(
         '
-            <div class="wpaa-alert wpaa-alert--%s">
+            <div class="wpaa-alert wpaa-alert--%s %s" style="max-width: %d' . 'px' . '; margin-top: %d' . 'px' . '; margin-bottom: %d' . 'px' . '">
                 <div class="wpaa-alert__icon">%s</div>
                 <div class="wpaa-alert__info">
-                    <h4 class="wpaa-alert__title">%s</h4>
-                    <p class="wpaa-alert__text">%s</p>
+                    <h4 class="wpaa-alert__title" style="font-size: %d' . 'px' . '; line-height: %d' . 'px' . '">%s</h4>
+                    <p class="wpaa-alert__text" style="font-size: %d' . 'px' . '; line-height: %d' . 'px' . '">%s</p>
                 </div>
             </div>
         ',
         $type,
+        $html_classes,
+        $max_size,
+        $margin,
+        $margin,
         wpaa_shortcode_icon($type),
+        $title_size,
+        $title_size + ($title_size * 0.2),
         $title,
+        $text_size,
+        $text_size + ($text_size * 0.2),
         $content
     );
 
