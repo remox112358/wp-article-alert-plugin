@@ -6,4 +6,5 @@
 interface WPAA_Plugin_Interface
 {
     public function init();
+    public function debug();
 }

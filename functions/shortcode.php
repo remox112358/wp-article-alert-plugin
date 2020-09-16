@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Display the shortcode output.
+ *
+ * @param array $atts
+ * @param string $content
+ * @return void
+ */
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
         'type'  => 'info',
@@ -27,6 +34,21 @@ function wpaa_shortcode_handler($atts, $content = null) {
     return ob_get_clean();
 }
 
+/**
+ * Get the alert shortcode icon by type.
+ *
+ * @param string $type
+ * @return void
+ */
 function wpaa_shortcode_icon($type = 'info') {
-    return '<img src="/" alt="Icon" />';
+    ob_start();
+
+    printf(
+        '
+            <img src="%s" alt="Warning">   
+        ',
+        plugins_url('/assets/warning.png', WPAA_PLUGIN)
+    );
+
+    return ob_get_clean();
 }
