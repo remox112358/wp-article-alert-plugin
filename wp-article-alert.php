@@ -13,6 +13,8 @@ define('WPAA_PLUGIN', __FILE__);
 
 define('WPAA_PLUGIN_NAME', 'Article Alert');
 
+define('WPAA_PLUGIN_VERSION', '1.0.0');
+
 define('WPAA_PLUGIN_ALERT_TYPES', array(
     'info', 'success', 'warning', 'danger'
 ));

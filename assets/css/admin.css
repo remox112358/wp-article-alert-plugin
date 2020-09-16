@@ -1,3 +1,113 @@
-.wpaa-admin__title {
-    font-size: 32px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.wpaa-admin {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.wpaa-admin * {
+    box-sizing: border-box !important;
+}
+
+.wpaa-admin__wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 25px !important;
+}
+
+.wpaa-admin .wpaa-admin__title {
+    font-size: 32px !important;
+    text-align: center !important;
+}
+
+.wpaa-admin .wpaa-admin__manage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 700px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.wpaa-admin .wpaa-admin__manage .manage__item {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 100% !important;
+    padding: 0 20px !important;
+    margin: 15px 0 !important;
+}
+
+.wpaa-admin .wpaa-admin__manage .manage__item:nth-child(1) {
+    margin-top: 0 !important;
+}
+
+.wpaa-admin .wpaa-admin__manage .manage__item.manage__item--full {
+    flex: 100% !important;
+}
+
+.wpaa-admin .wpaa-admin__manage .manage__item label {
+    font-size: 18px !important;
+    line-height: 22px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 5px !important;
+}
+
+.wpaa-admin .wpaa-admin__manage .manage__item input,
+.wpaa-admin .wpaa-admin__manage .manage__item textarea,
+.wpaa-admin .wpaa-admin__manage .manage__item select {
+    font-size: 20px !important;
+    line-height: 22px !important;
+    padding: 5px 10px !important;
+    max-width: 100% !important;
+}
+
+.wpaa-admin .wpaa-admin__result {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 700px !important;
+    width: 100% !important;
+    margin-left: 100px !important;
+}
+
+.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode {
+    cursor: pointer !important;
+    position: relative !important;
+    width: 100% !important;
+    padding: 10px 20px !important;
+    border: 2px dashed #6d6d6d !important;
+    background: #e6e6e6 !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    transition: .25s !important;
+    margin-top: 100px !important;
+}
+
+.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode:hover {
+    background: #d1d1d1 !important;
+}
+
+.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode .shortcode__hint {
+    position: absolute !important;
+    top: -50px !important;
+    left: 20px !important;
+    transform: rotate(10deg) !important;
+    font-size: 22px !important;
+    line-height: 24px !important;
+}
+
+@media screen and (min-width: 576px) {
+
+    .wpaa-admin .wpaa-admin__title {
+        text-align: start !important;
+    }
+
+    .wpaa-admin .wpaa-admin__manage {
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+    }
+
+    .wpaa-admin .wpaa-admin__manage .manage__item {
+        flex: 50% !important;
+    }
+
 }
