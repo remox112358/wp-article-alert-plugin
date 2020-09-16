@@ -49,7 +49,7 @@ function wpaa_shortcode_icon($type) {
         
     printf(
         '<img src="%s" alt="%s">',
-        plugins_url('/assets/' . $type . '.png', WPAA_PLUGIN),
+        plugins_url('/assets/icons/' . $type . '.png', WPAA_PLUGIN),
         ucfirst($type)
     );
 

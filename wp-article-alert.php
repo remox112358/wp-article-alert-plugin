@@ -11,9 +11,9 @@ Version: 1.0
 
 define('WPAA_PLUGIN', __FILE__);
 
-define('WPAA_PLUGIN_ALERT_TYPES', [
+define('WPAA_PLUGIN_ALERT_TYPES', array(
     'info', 'success', 'warning', 'danger'
-]);
+));
 
 if (! defined('WPAA_LOAD_CSS'))
 	define('WPAA_LOAD_CSS', true);
@@ -74,6 +74,11 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
         add_action('wp_enqueue_scripts', 'wpaa_assets');
     }
 
+    /**
+     * Clings to hook and initialize debug.
+     *
+     * @return void
+     */
     protected final static function initDebug()
     {
         add_action('init', 'debug');
