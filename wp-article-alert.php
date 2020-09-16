@@ -11,6 +11,10 @@ Version: 1.0
 
 define('WPAA_PLUGIN', __FILE__);
 
+define('WPAA_PLUGIN_ALERT_TYPES', [
+    'info', 'success', 'warning', 'danger'
+]);
+
 if (! defined('WPAA_LOAD_CSS'))
 	define('WPAA_LOAD_CSS', true);
 

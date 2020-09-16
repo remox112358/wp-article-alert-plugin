@@ -10,7 +10,7 @@
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
         'type'  => 'info',
-        'title' => 'Внимание!'
+        'title' => 'Info!'
     ], $atts));
 
     ob_start();
@@ -26,7 +26,7 @@ function wpaa_shortcode_handler($atts, $content = null) {
             </div>
         ',
         $type,
-        wpaa_shortcode_icon(),
+        wpaa_shortcode_icon($type),
         $title,
         $content
     );
@@ -40,14 +40,17 @@ function wpaa_shortcode_handler($atts, $content = null) {
  * @param string $type
  * @return void
  */
-function wpaa_shortcode_icon($type = 'info') {
-    ob_start();
+function wpaa_shortcode_icon($type) {
+    
+    if (! in_array($type, WPAA_PLUGIN_ALERT_TYPES))
+        $type = WPAA_PLUGIN_ALERT_DEFAULT_TYPE;
 
+    ob_start();
+        
     printf(
-        '
-            <img src="%s" alt="Warning">   
-        ',
-        plugins_url('/assets/warning.png', WPAA_PLUGIN)
+        '<img src="%s" alt="%s">',
+        plugins_url('/assets/' . $type . '.png', WPAA_PLUGIN),
+        ucfirst($type)
     );
 
     return ob_get_clean();
