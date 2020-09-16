@@ -8,5 +8,4 @@
 
 require_once 'classes/WPAA_Plugin_Interface.php';
 
-require_once 'functions/assets.php';
 require_once 'functions/shortcode.php';
