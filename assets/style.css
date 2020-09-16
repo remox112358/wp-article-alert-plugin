@@ -4,11 +4,11 @@
 
 .wpaa-alert {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     align-items: center !important;
     box-sizing: border-box !important;
     width: 100% !important;
-    padding: 20px 50px !important;
+    padding: 20px !important;
     margin: 20px 0 20px 0 !important;
     border-width: 5px;
     border-style: dashed;
@@ -38,6 +38,7 @@
 .wpaa-alert__icon {
     max-width: 80px !important;
     width: 100% !important;
+    margin-bottom: 20px;
 }
 
 .wpaa-alert__icon img {
@@ -47,7 +48,7 @@
 .wpaa-alert__info {
     display: flex !important;
     flex-direction: column !important;
-    margin-left: 30px;
+    text-align: center;
 }
 
 .wpaa-alert__title {
@@ -62,4 +63,22 @@
     padding: 0 !important;
     margin: 10px 0 0 0 !important;
     border: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+
+    .wpaa-alert {
+        flex-direction: row !important;
+        padding: 20px 50px !important;
+    }
+
+    .wpaa-alert__info {
+        text-align: left !important;
+        margin-left: 30px !important;
+    }
+
+    .wpaa-alert__icon {
+        margin: 0 !important;
+    }
+
 }
