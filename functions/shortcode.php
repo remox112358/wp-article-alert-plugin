@@ -9,13 +9,13 @@
  */
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
-        'type'         => 'info',
-        'title'        => 'Info!',
-        'html_classes' => '',
-        'title_size'   => 18,
-        'text_size'    => 16,
-        'max_size'     => 700,
-        'margin'       => 20
+        'type'         => WPAA_PLUGIN_ALERT_DEFAULT['warning'],
+        'title'        => WPAA_PLUGIN_ALERT_DEFAULT['title'],
+        'html_classes' => WPAA_PLUGIN_ALERT_DEFAULT['html_classes'],
+        'title_size'   => WPAA_PLUGIN_ALERT_DEFAULT['title_size'],
+        'text_size'    => WPAA_PLUGIN_ALERT_DEFAULT['text_size'],
+        'max_size'     => WPAA_PLUGIN_ALERT_DEFAULT['max_size'],
+        'margin'       => WPAA_PLUGIN_ALERT_DEFAULT['margin']
     ], $atts));
 
     ob_start();

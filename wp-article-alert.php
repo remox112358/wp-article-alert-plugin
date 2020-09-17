@@ -19,6 +19,17 @@ define('WPAA_PLUGIN_ALERT_TYPES', array(
     'info', 'success', 'warning', 'danger'
 ));
 
+define('WPAA_PLUGIN_ALERT_DEFAULT', array(
+    'type'         => 'info',
+    'title'        => 'Info!',
+    'text'         => 'Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio.',
+    'max_size'     => 700,
+    'title_size'   => 18,
+    'text_size'    => 16,
+    'html_classes' => 'wpaa-alert--custom',
+    'margin'       => 20  
+));
+
 if (! defined('WPAA_LOAD_CSS'))
 	define('WPAA_LOAD_CSS', true);
 
@@ -98,6 +109,7 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
             wp_enqueue_script('jquery');
             wp_enqueue_script('wpaa-script-admin', plugins_url('/assets/js/admin.js', WPAA_PLUGIN), array('jquery'), null, true);
         
+            wp_enqueue_style('wpaa-style', plugins_url('/assets/css/style.css', WPAA_PLUGIN));
             wp_enqueue_style('wpaa-style-admin', plugins_url('/assets/css/admin.css', WPAA_PLUGIN));
         });
     }
