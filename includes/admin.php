@@ -10,15 +10,15 @@
                 <div class="manage__items">
                     <div class="manage__item manage__item--full">
                         <label for="wpaa-alert-text">Text</label>
-                        <textarea rows="4" id="wpaa-alert-text" placeholder="Add text"><?= WPAA_PLUGIN_ALERT_DEFAULT['text'] ?></textarea>
+                        <textarea rows="4" id="wpaa-alert-text" placeholder="Add text" data-change="wpaa-alert-preview"><?= WPAA_PLUGIN_ALERT_DEFAULT['text'] ?></textarea>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-title">Title</label>
-                        <input type="text" id="wpaa-alert-title" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title'] ?>" placeholder="Add title">
+                        <input type="text" id="wpaa-alert-title" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title'] ?>" placeholder="Add title" data-change="wpaa-alert-preview">
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-type">Type</label>
-                        <select id="wpaa-alert-type">
+                        <select id="wpaa-alert-type" data-change="wpaa-alert-preview">
                             <?php foreach (WPAA_PLUGIN_ALERT_TYPES as $type) : ?>
                                 <option value="<?= $type ?>" <?= $type == WPAA_PLUGIN_ALERT_DEFAULT['type'] ? 'selected' : '' ?>><?= ucfirst($type) ?></option>
                             <?php endforeach; ?>
@@ -26,30 +26,36 @@
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-max-size">Max size</label>
-                        <input type="text" id="wpaa-alert-max-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>" placeholder="Add max size"/>
+                        <input type="text" id="wpaa-alert-max-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>" placeholder="Add max size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-title-size">Title size</label>
-                        <input type="text" id="wpaa-alert-title-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>" placeholder="Add title size"/>
+                        <input type="text" id="wpaa-alert-title-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>" placeholder="Add title size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-text-size">Text size</label>
-                        <input type="text" id="wpaa-alert-text-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>" placeholder="Add text size"/>
+                        <input type="text" id="wpaa-alert-text-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>" placeholder="Add text size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-classes">Custom classes</label>
-                        <input type="text" id="wpaa-alert-classes" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" placeholder="Add classes"/>
+                        <input type="text" id="wpaa-alert-classes" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" placeholder="Add classes" data-change="wpaa-alert-preview"/>
+                    </div>
+                    <div class="manage__item">
+                        <label for="wpaa-alert-margin">Margin</label>
+                        <input type="text" id="wpaa-alert-margin" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>" placeholder="Add margin" data-change="wpaa-alert-preview"/>
                     </div>
                 </div>
             </div>
             <div class="wpaa-admin__result">
                 <div class="wpaa-admin__preview">
                     <h2 class="preview__title">preview</h2>
-                    <div class="wpaa-alert wpaa-alert--info " style="max-width: 700px; margin-top: 20px; margin-bottom: 20px">
-                        <div class="wpaa-alert__icon"><img src="http://localhost/wordpress/wp-content/plugins/article-alert/assets/icons/info.png" alt="Info"></div>
+                    <div class="wpaa-alert wpaa-alert--<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?> <?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" style="max-width: <?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>px; margin-top: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px; margin-bottom: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px">
+                        <div class="wpaa-alert__icon">
+                            <img src="http://localhost/wordpress/wp-content/plugins/article-alert/assets/icons/info.png" alt="<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?>">
+                        </div>
                         <div class="wpaa-alert__info">
-                            <h4 class="wpaa-alert__title" style="font-size: 18px; line-height: 21px">Info!</h4>
-                            <p class="wpaa-alert__text" style="font-size: 16px; line-height: 19px">Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio.</p>
+                            <h4 class="wpaa-alert__title" style="font-size: <?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>px; line-height: <?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] * 1.2 ?>px"><?= WPAA_PLUGIN_ALERT_DEFAULT['title'] ?></h4>
+                            <p class="wpaa-alert__text" style="font-size: <?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>px; line-height: <?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] * 1.2 ?>px"><?= WPAA_PLUGIN_ALERT_DEFAULT['text'] ?></p>
                         </div>
                     </div>
                 </div>

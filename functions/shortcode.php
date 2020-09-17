@@ -9,7 +9,7 @@
  */
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
-        'type'         => WPAA_PLUGIN_ALERT_DEFAULT['warning'],
+        'type'         => WPAA_PLUGIN_ALERT_DEFAULT['type'],
         'title'        => WPAA_PLUGIN_ALERT_DEFAULT['title'],
         'html_classes' => WPAA_PLUGIN_ALERT_DEFAULT['html_classes'],
         'title_size'   => WPAA_PLUGIN_ALERT_DEFAULT['title_size'],
@@ -56,7 +56,7 @@ function wpaa_shortcode_handler($atts, $content = null) {
 function wpaa_shortcode_icon($type) {
     
     if (! in_array($type, WPAA_PLUGIN_ALERT_TYPES))
-        $type = WPAA_PLUGIN_ALERT_DEFAULT_TYPE;
+        $type = WPAA_PLUGIN_ALERT_DEFAULT['type'];
 
     ob_start();
         
