@@ -11,6 +11,8 @@ Version: 1.0
 
 define('WPAA_PLUGIN', __FILE__);
 
+define('WPAA_PLUGIN_URL', 'https://github.com/remox112358/wp-article-alert-plugin');
+
 define('WPAA_PLUGIN_NAME', 'Article Alert');
 
 define('WPAA_PLUGIN_PAGE_NAME', 'article-alert');

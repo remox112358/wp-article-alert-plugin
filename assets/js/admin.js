@@ -27,17 +27,19 @@ jQuery(document).ready($ => {
         render: function() {
             let data = this.getData();
 
-            $('.wpaa-alert').remove();
+            $('.wpaa-alert').fadeOut(200, function() {
+                $(this).remove();
 
-            $('.wpaa-admin__preview').append(`
-                <div class="wpaa-alert wpaa-alert--${data.type} ${data.customClasses}" style="max-width: ${data.maxSize}px; margin-top: ${data.margin}px; margin-bottom: ${data.margin}px">
-                    <div class="wpaa-alert__icon"><img src="${data.imageSrc + data.type + '.png'}" alt="${data.type}"></div>
-                    <div class="wpaa-alert__info">
-                        <h4 class="wpaa-alert__title" style="font-size: ${data.titleSize}px; line-height: ${data.titleSize * 1.2}px">${data.title}</h4>
-                        <p class="wpaa-alert__text" style="font-size: ${data.textSize}px; line-height: ${data.textSize * 1.2}px">${data.text}</p>
+                $('.wpaa-admin__preview').append(`
+                    <div class="wpaa-alert wpaa-alert--${data.type} ${data.customClasses} fade" style="max-width: ${data.maxSize}px; margin-top: ${data.margin}px; margin-bottom: ${data.margin}px">
+                        <div class="wpaa-alert__icon"><img src="${data.imageSrc + data.type + '.png'}" alt="${data.type}"></div>
+                        <div class="wpaa-alert__info">
+                            <h4 class="wpaa-alert__title" style="font-size: ${data.titleSize}px; line-height: ${data.titleSize * 1.2}px">${data.title}</h4>
+                            <p class="wpaa-alert__text" style="font-size: ${data.textSize}px; line-height: ${data.textSize * 1.2}px">${data.text}</p>
+                        </div>
                     </div>
-                </div>
-            `);
+                `);
+            });
 
             this.generate();
         },

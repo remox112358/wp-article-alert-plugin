@@ -2,7 +2,7 @@
     <div class="wpaa-admin">
         <h1 class="wpaa-admin__title">Article Alert (<?= 'v' . WPAA_PLUGIN_VERSION ?>)</h1>
         <div class="wpaa-admin__links">
-            <a href="https://github.com/remox112358/wp-article-alert-plugin" target="_blank">github</a>
+            <a href="<?= WPAA_PLUGIN_URL ?>" target="_blank">github</a>
         </div>
         <div class="wpaa-admin__wrapper">
             <div class="wpaa-admin__manage">
@@ -26,15 +26,15 @@
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-max-size">Max size</label>
-                        <input type="text" id="wpaa-alert-max-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>" placeholder="Add max size" data-change="wpaa-alert-preview"/>
+                        <input type="number" step="10" id="wpaa-alert-max-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>" placeholder="Add max size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-title-size">Title size</label>
-                        <input type="text" id="wpaa-alert-title-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>" placeholder="Add title size" data-change="wpaa-alert-preview"/>
+                        <input type="number" step="2" id="wpaa-alert-title-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>" placeholder="Add title size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-text-size">Text size</label>
-                        <input type="text" id="wpaa-alert-text-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>" placeholder="Add text size" data-change="wpaa-alert-preview"/>
+                        <input type="number" step="2" id="wpaa-alert-text-size" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>" placeholder="Add text size" data-change="wpaa-alert-preview"/>
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-classes">Custom classes</label>
@@ -42,14 +42,14 @@
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-margin">Margin</label>
-                        <input type="text" id="wpaa-alert-margin" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>" placeholder="Add margin" data-change="wpaa-alert-preview"/>
+                        <input type="number" step="5" id="wpaa-alert-margin" value="<?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>" placeholder="Add margin" data-change="wpaa-alert-preview"/>
                     </div>
                 </div>
             </div>
             <div class="wpaa-admin__result">
                 <div class="wpaa-admin__preview">
                     <h2 class="preview__title">preview</h2>
-                    <div class="wpaa-alert wpaa-alert--<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?> <?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" style="max-width: <?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>px; margin-top: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px; margin-bottom: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px">
+                    <div class="wpaa-alert wpaa-alert--<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?> <?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?> fade" style="max-width: <?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>px; margin-top: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px; margin-bottom: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px">
                         <div class="wpaa-alert__icon">
                             <?= wpaa_shortcode_icon(WPAA_PLUGIN_ALERT_DEFAULT['type']) ?>
                         </div>
