@@ -67,7 +67,7 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
     protected final static function createAdminPage()
     {
         add_action('admin_menu', function() {
-            $page = add_menu_page(
+            add_menu_page(
                 WPAA_PLUGIN_NAME,
                 WPAA_PLUGIN_NAME,
                 'manage_options',
@@ -75,7 +75,6 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
                 null,
                 'dashicons-warning'
             );
-
         });
         
         self::importAssets();
