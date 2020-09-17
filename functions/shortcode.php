@@ -48,23 +48,32 @@ function wpaa_shortcode_handler($atts, $content = null) {
 }
 
 /**
- * Get the alert shortcode icon by type.
+ * Undocumented function
  *
  * @param string $type
+ * @param boolean $src
  * @return void
  */
-function wpaa_shortcode_icon($type) {
+function wpaa_shortcode_icon($type, $src = false) {
     
     if (! in_array($type, WPAA_PLUGIN_ALERT_TYPES))
         $type = WPAA_PLUGIN_ALERT_DEFAULT['type'];
 
     ob_start();
+
+    if ($src) {
+        printf(
+            '%s',
+            plugins_url('/assets/icons/', WPAA_PLUGIN)
+        );
+    } else {
+        printf(
+            '<img src="%s" alt="%s">',
+            plugins_url('/assets/icons/' . $type . '.png', WPAA_PLUGIN),
+            ucfirst($type)
+        );
+    }
         
-    printf(
-        '<img src="%s" alt="%s">',
-        plugins_url('/assets/icons/' . $type . '.png', WPAA_PLUGIN),
-        ucfirst($type)
-    );
 
     return ob_get_clean();
 }

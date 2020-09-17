@@ -11,7 +11,7 @@
 .wpaa-admin__wrapper {
     display: flex !important;
     flex-direction: column !important;
-    margin-top: 25px !important;
+    margin-top: 50px !important;
 }
 
 .wpaa-admin .wpaa-admin__title {
@@ -78,21 +78,24 @@
     margin: 20px 0 0 0px !important;
 }
 
-.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode {
-    position: relative !important;
+.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode .shortcode__hint {
+    font-size: 18px !important;
+    line-height: 26px !important;
+    text-transform: uppercase !important;
+    color: #aaa !important;
 }
 
-.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode .shortcode__hint {
-    position: absolute !important;
-    bottom: -50px !important;
-    left: 20px !important;
-    transform: rotate(-20deg) !important;
-    font-size: 20px !important;
-    line-height: 24px !important;
+.wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode .shortcode__action {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    text-transform: uppercase !important;
+    margin-top: 10px !important;
+    color: #aaa !important;
 }
 
 .wpaa-admin .wpaa-admin__result .wpaa-admin__shortcode .shortcode__inner {
     cursor: pointer !important;
+    user-select: none !important;
     padding: 10px 20px !important;
     border: 2px dashed #6d6d6d !important;
     background: #e6e6e6 !important;

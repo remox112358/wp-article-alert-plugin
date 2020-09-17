@@ -18,7 +18,7 @@
                     </div>
                     <div class="manage__item">
                         <label for="wpaa-alert-type">Type</label>
-                        <select id="wpaa-alert-type" data-change="wpaa-alert-preview">
+                        <select id="wpaa-alert-type" data-change="wpaa-alert-preview" data-image-src="<?= wpaa_shortcode_icon(WPAA_PLUGIN_ALERT_DEFAULT['type'], true) ?>">
                             <?php foreach (WPAA_PLUGIN_ALERT_TYPES as $type) : ?>
                                 <option value="<?= $type ?>" <?= $type == WPAA_PLUGIN_ALERT_DEFAULT['type'] ? 'selected' : '' ?>><?= ucfirst($type) ?></option>
                             <?php endforeach; ?>
@@ -51,7 +51,7 @@
                     <h2 class="preview__title">preview</h2>
                     <div class="wpaa-alert wpaa-alert--<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?> <?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" style="max-width: <?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>px; margin-top: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px; margin-bottom: <?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>px">
                         <div class="wpaa-alert__icon">
-                            <img src="http://localhost/wordpress/wp-content/plugins/article-alert/assets/icons/info.png" alt="<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?>">
+                            <?= wpaa_shortcode_icon(WPAA_PLUGIN_ALERT_DEFAULT['type']) ?>
                         </div>
                         <div class="wpaa-alert__info">
                             <h4 class="wpaa-alert__title" style="font-size: <?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>px; line-height: <?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] * 1.2 ?>px"><?= WPAA_PLUGIN_ALERT_DEFAULT['title'] ?></h4>
@@ -60,10 +60,11 @@
                     </div>
                 </div>
                 <div class="wpaa-admin__shortcode">
-                    <div class="shortcode__hint">Click to copy →</div>
-                    <div class="shortcode__inner">
-                        [alert type="info" title="Info!" title_size="18" text_size="16" max_size="700" html_classes="custom1 custom2 custom3"]Lorem ipsum dolor sit amet lorem ipsum dolor sit amet orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet[/alert]
+                    <div class="shortcode__hint">Click to copy</div>
+                    <div class="shortcode__inner" id="shortcode">
+                        [alert type="<?= WPAA_PLUGIN_ALERT_DEFAULT['type'] ?>" title="<?= WPAA_PLUGIN_ALERT_DEFAULT['title'] ?>" max_size="<?= WPAA_PLUGIN_ALERT_DEFAULT['max_size'] ?>" title_size="<?= WPAA_PLUGIN_ALERT_DEFAULT['title_size'] ?>" text_size="<?= WPAA_PLUGIN_ALERT_DEFAULT['text_size'] ?>" html_classes="<?= WPAA_PLUGIN_ALERT_DEFAULT['html_classes'] ?>" margin="<?= WPAA_PLUGIN_ALERT_DEFAULT['margin'] ?>"]<?= WPAA_PLUGIN_ALERT_DEFAULT['text'] ?>[/alert]
                     </div>
+                    <div class="shortcode__action fade" style="display: none;">Copied successfuly</div>
                 </div>
             </div>
         </div>
