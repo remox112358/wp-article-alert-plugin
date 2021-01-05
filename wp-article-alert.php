@@ -50,7 +50,7 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
      */
     public function init()
     {
-        self::createShortcode();
+        self::registerShortcode();
         self::createAdminPage();
     }
 
@@ -59,11 +59,16 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
      *
      * @return void
      */
-    protected final static function createShortcode()
+    protected final static function registerShortcode()
     {
         add_shortcode('alert', 'wpaa_shortcode_handler');
     }
 
+    /**
+     * Create and add admin page in dashboard.
+     *
+     * @return void
+     */
     protected final static function createAdminPage()
     {
         add_action('admin_menu', function() {
@@ -75,7 +80,6 @@ class WPAA_Plugin implements WPAA_Plugin_Interface
                 null,
                 'dashicons-warning'
             );
-
         });
         
         self::importAssets();

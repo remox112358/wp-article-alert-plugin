@@ -5,7 +5,7 @@
  *
  * @param array $atts
  * @param string $content
- * @return void
+ * @return string
  */
 function wpaa_shortcode_handler($atts, $content = null) {
     extract(shortcode_atts([
@@ -48,11 +48,11 @@ function wpaa_shortcode_handler($atts, $content = null) {
 }
 
 /**
- * Undocumented function
+ * Returns the alert icon image src.
  *
  * @param string $type
  * @param boolean $src
- * @return void
+ * @return string
  */
 function wpaa_shortcode_icon($type, $src = false) {
     
@@ -62,10 +62,7 @@ function wpaa_shortcode_icon($type, $src = false) {
     ob_start();
 
     if ($src) {
-        printf(
-            '%s',
-            plugins_url('/assets/icons/', WPAA_PLUGIN)
-        );
+        printf('%s', plugins_url('/assets/icons/', WPAA_PLUGIN));
     } else {
         printf(
             '<img src="%s" alt="%s">',

@@ -1,8 +1,18 @@
 jQuery(document).ready($ => {
 
+    /**
+     * @const  {object}
+     */
     const Helper = {
+        /**
+         * Copies the text of the element to the clipboard.
+         * 
+         * @param  {object} el - element
+         * @returns  {void}
+         */
         copyText: function(el) {
             var $tmp = $("<textarea>");
+            
             $("body").append($tmp);
             $tmp.val($(el).text()).select();
             document.execCommand("copy");
@@ -10,7 +20,16 @@ jQuery(document).ready($ => {
         }
     }
     
+    /**
+     * @const  {object}
+     */
     const Constructor = {
+        
+        /**
+         * Returns the all data of alert.
+         * 
+         * @returns  {object}
+         */
         getData: function() {
             return {
                 text: $('#wpaa-alert-text').val().trim(),
@@ -24,6 +43,12 @@ jQuery(document).ready($ => {
                 imageSrc: $('#wpaa-alert-type').attr('data-image-src')
             }
         },
+
+        /**
+         * Render and update the alert preview.
+         * 
+         * @returns  {void}
+         */
         render: function() {
             let data = this.getData();
 
@@ -43,6 +68,12 @@ jQuery(document).ready($ => {
 
             this.generate();
         },
+
+        /**
+         * Generate the shortcode of alert.
+         * 
+         * @returns  {void}
+         */
         generate: function() {
             let data = this.getData();
             let shortcode = `[alert type="${data.type}" title="${data.title}" max_size="${data.maxSize}" title_size="${data.titleSize} text_size="${data.textSize}" html_classes="${data.customClasses}" margin="${data.margin}"]${data.text}[/alert]`;
@@ -51,10 +82,12 @@ jQuery(document).ready($ => {
         }
     }
 
+    // On data change
     $('[data-change="wpaa-alert-preview"]').on("input", () => {
         Constructor.render();
     });
 
+    // On shortcode click
     $('#shortcode').on("click", function() {
         Helper.copyText(this);
 
